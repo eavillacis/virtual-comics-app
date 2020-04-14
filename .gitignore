@@ -1,0 +1,7 @@
+# ignore project files
+.idea
+
+# ignore install files and dependecies, this comes with npm install
+.next
+node_modules
+package-lock.json
