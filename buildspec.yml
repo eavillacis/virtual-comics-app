@@ -9,8 +9,10 @@ phases:
   build:
     commands:
       - echo "pre_build step"
+      - echo "installing dependencies"
       - npm install -g next
       - npm i
+      - echo "building static content"
       - npm run build
   post_build:
     commands:
