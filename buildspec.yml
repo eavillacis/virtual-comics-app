@@ -16,4 +16,6 @@ phases:
       - npm run build
   post_build:
     commands:
+      - echo "post_build step"
+      - echo "coping files to s3"
       - aws s3 sync --delete ./out "s3://virtualcomics.com"
