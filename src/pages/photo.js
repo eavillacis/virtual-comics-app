@@ -8,13 +8,13 @@ const PhotoPage = (props) => (
     <Layout>
         <div className="container">
             <div className="display_image">
-                <img src={props.image.image} alt=''/>
+                <img src={typeof props.image === "undefined" ?? props.image.image} alt=''/>
                 <CommentsFunctionality />
             </div>
             <div className="comments">
-                <p className="tagline">{props.image.tagline}</p>
+                <p className="tagline">{typeof props.image === "undefined" ?? props.image.tagline}</p>
                 {
-                    props.image.comments.map((comment, key) => <p key={key}><strong>{comment.user}:</strong>{comment.body}</p>)
+                    typeof props.image === "undefined" ?? props.image.comments.map((comment, key) => <p key={key}><strong>{comment.user}:</strong>{comment.body}</p>)
                 }
                 {/*<form className="comment-form" >*/}
                 {/*    <input type="text"placeholder="Author" />*/}

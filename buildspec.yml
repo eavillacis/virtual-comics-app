@@ -1,0 +1,15 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - echo "install step"
+  pre_build:
+    commands:
+      - echo "pre_build step"
+  build:
+    commands:
+      - echo "pre_build step"
+      - npm build
+  post_build:
+    commands:
+      - aws s3 sync --delete ./out "s3://virtualcomics.com"
