@@ -18,5 +18,5 @@ phases:
     commands:
       - echo "post_build step"
       - echo "coping files to s3"
-      - echo "test 8"
+      - echo "test 12"
       - aws s3 sync ./out "s3://virtualcomics.com" --acl public-read --delete
