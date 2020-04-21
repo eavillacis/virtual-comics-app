@@ -18,4 +18,5 @@ phases:
     commands:
       - echo "post_build step"
       - echo "coping files to s3"
+      - echo "test 8"
       - aws s3 sync --delete ./out "s3://virtualcomics.com"
