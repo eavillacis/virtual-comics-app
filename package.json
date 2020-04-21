@@ -4,7 +4,9 @@
   "description": "levelup virtual comics app",
   "main": "src/index.js",
   "scripts": {
-    "start": "next"
+    "dev": "next",
+    "build": "next build && next export",
+    "start": "next start"
   },
   "author": "eavillacis",
   "license": "MIT",
