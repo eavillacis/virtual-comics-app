@@ -9,6 +9,10 @@ export default () => {
                 {
                     user: 'rex2018',
                     body: 'Hey this is dope! xxx'
+                },
+                {
+                    user: 'rex2019',
+                    body: 'Hey this is dope x1000! :D'
                 }
             ]
         },

@@ -3,15 +3,15 @@ phases:
   install:
     commands:
       - echo "install step"
+      - echo "installing dependencies"
+      - npm i
   pre_build:
     commands:
       - echo "pre_build step"
+#      - echo "TESTS HERE"
   build:
     commands:
       - echo "pre_build step"
-      - echo "installing dependencies"
-      - npm install -g next
-      - npm i
       - echo "building static content"
       - npm run build
   post_build:
