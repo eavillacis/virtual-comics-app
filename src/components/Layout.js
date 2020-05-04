@@ -49,7 +49,7 @@ export default ({ children, title = 'Virtual Comics' }) => (
             header h1 a{
                 font-family: 'Oleo Script', cursive;
                 font-family: 'Changa', sans-serif;
-                font-size: 15rem;
+                font-size: 20rem;
                 color: #222222;
                 text-shadow: #999999 0px 0 40px;
                 letter-spacing: -10px;
@@ -57,9 +57,9 @@ export default ({ children, title = 'Virtual Comics' }) => (
                 text-decoration: none;
             }
             h2{
-                font-size: 3.5rem;
+                font-size: 10rem;
                 color: white;
-                text-shadow: none;
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
                 letter-spacing: normal;
                 font-weight: normal;
                 font-family: 'Dancing Script', cursive;

@@ -28,19 +28,20 @@ export default (props) => {
                     color: #AD0044;
                     box-shadow: -12px 16px 75px -27px rgba(0,0,0,1);
                     margin-bottom: -50px;
-                    margin-top: 100px;
+                    margin-top: 70px;
                     overflow: auto;
                 }
                 img{
-                    width: 100%;
-                    height: 75rem;
+                    width: 80%;
+                    height: 60rem;
+                    margin: 10%;
                 }
                 .tagline{
                     margin-bottom: 20px; // kind of hack
                 }
                 @media only screen and (max-width: 900px) {
                     img{
-                        height: 40rem;
+                        height: 35rem;
                     }
                     .tagline{
                         font-size: 14px;
