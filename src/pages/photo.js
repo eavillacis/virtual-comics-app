@@ -1,5 +1,4 @@
 import Layout from '../components/Layout';
-import Photo from '../components/Photo';
 import CommentsFunctionality from '../components/InteractiveButtons'
 import getPhotos from '../data/data.js'
 
@@ -8,19 +7,14 @@ const PhotoPage = (props) => (
     <Layout>
         <div className="container">
             <div className="display_image">
-                <img src={typeof props.image === "undefined" ?? props.image.image} alt=''/>
+                <img src={props.image} alt=''/>
                 <CommentsFunctionality />
             </div>
             <div className="comments">
-                <p className="tagline">{typeof props.image === "undefined" ?? props.image.tagline}</p>
+                <p className="tagline">{props.title}</p>
                 {
-                    typeof props.image === "undefined" ?? props.image.comments.map((comment, key) => <p key={key}><strong>{comment.user}:</strong>{comment.body}</p>)
+                    typeof props.commentData !== "undefined" ? props.commentData.comments.map((comment, key) => <p key={key}><strong>{comment.user}:</strong>{comment.body}</p>) : "No Comments"
                 }
-                {/*<form className="comment-form" >*/}
-                {/*    <input type="text"placeholder="Author" />*/}
-                {/*    <input type="text"  placeholder="comment..." />*/}
-                {/*    <input type="submit" hidden />*/}
-                {/*</form>*/}
             </div>
         </div>
         <style>{`
@@ -87,14 +81,16 @@ const PhotoPage = (props) => (
             }
         `}</style>
     </Layout>
-)
+);
 
 PhotoPage.getInitialProps = async ({query}) => {
     // could fetch data here
-    let {id} = {...query}
-    let image = getPhotos().find(m => m.id == id)
+    let {id, image, title} = {...query};
+    let commentData = getPhotos().find(m => m.id == id);
 
-    return { image }
+    console.log(commentData);
+
+    return { commentData, image, title}
 }
 
 export default PhotoPage

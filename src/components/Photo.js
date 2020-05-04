@@ -2,14 +2,17 @@ import CommentsFunctionality from './InteractiveButtons'
 import Link from 'next/link'
 
 export default (props) => {
+    const image = props.data.thumbnail.path + "/clean." + props.data.thumbnail.extension;
+    const title = props.data.title;
+
     return (
         <div className="photoComponent">
             <div style={{flex: '1 0 auto'}}>
-                <Link href={{ pathname: '/photo', query: { id: props.id } }}>
-                    <img src={props.data.image} alt=""/>
+                <Link href={{ pathname: '/photo', query: { id: 0, image: encodeURI(image), title: title} }}>
+                    <img src={image} alt=""/>
                 </Link>
                 <div className="meta">
-                    <p className="tagline">{props.data.tagline}</p>
+                    <p className="tagline">{title}</p>
                     <CommentsFunctionality likes={props.data.likes} />
                 </div>
             </div>
@@ -21,7 +24,6 @@ export default (props) => {
                     float: left;
                     margin: 2% 2% 20px 2%;
                     font-size: 1.6rem;
-                    //height: 400px;
                     background: var(--white);
                     color: #AD0044;
                     box-shadow: -12px 16px 75px -27px rgba(0,0,0,1);
@@ -30,11 +32,27 @@ export default (props) => {
                     overflow: auto;
                 }
                 img{
-                    width: 80%;
-                    margin: 10%;
+                    width: 100%;
+                    height: 75rem;
                 }
                 .tagline{
-                    margin-bottom: 10px; // kind of hack
+                    margin-bottom: 20px; // kind of hack
+                }
+                @media only screen and (max-width: 900px) {
+                    img{
+                        height: 40rem;
+                    }
+                    .tagline{
+                        font-size: 14px;
+                    }
+                }
+                @media only screen and (max-width: 600px) {
+                    img{
+                        height: 15rem;
+                    }
+                    .tagline{
+                        font-size: 14px;
+                    }
                 }
             `}</style>
         </div>
