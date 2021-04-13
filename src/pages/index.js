@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import getPhotos from '../data/data.js'
+import getComics from '../data/data.js'
 import Photo from '../components/Photo';
 import fetch from 'node-fetch';
 
@@ -14,13 +14,13 @@ const Index = (props) => (
 export const getStaticProps = async ({ }) => {
     // Would fetch data
     // Call an external API endpoint to get posts.
-    const res = await fetch('https://wea4jmuke6.execute-api.us-east-2.amazonaws.com/Prod/api/v1/comics');
-    const comics = await res.json();
+    // const res = await fetch('https://wea4jmuke6.execute-api.us-east-2.amazonaws.com/Prod/api/v1/comics');
+    // const comics = await res.json();
 
     return {
         props: {
-            // images: getPhotos(),
-            comics: comics.data.results
+            comics: getComics(),
+            // comics: comics.data.results
         }
     }
 };
