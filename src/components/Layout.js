@@ -34,8 +34,8 @@ export default ({ children, title = 'Virtual Comics' }) => (
                 font-size: 1.4rem; } /* =14px all type sizes are relative to the base size*/
             .app{
                 // width: 80%;
-                margin: auto;
-                overflow: auto;
+                // margin: auto;
+                // overflow: auto;
             }
         `}</style>
             <style jsx>{`
