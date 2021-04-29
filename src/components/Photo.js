@@ -40,6 +40,9 @@ export default (props) => {
                     margin-bottom: 20px; // kind of hack
                 }
                 @media only screen and (max-width: 900px) {
+                    .photoComponent {
+                        width: 45%;
+                    }
                     img{
                         height: 35rem;
                     }
@@ -48,7 +51,11 @@ export default (props) => {
                     }
                 }
                 @media only screen and (max-width: 600px) {
+                    .photoComponent {
+                        width: 45%;
+                    }
                     img{
+                        width: 75%;
                         height: 15rem;
                     }
                     .tagline{

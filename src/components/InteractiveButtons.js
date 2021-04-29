@@ -1,9 +1,10 @@
-import { MdModeComment, MdFavoriteBorder } from 'react-icons/md'
+import { AiOutlineWhatsApp } from 'react-icons/ai'
 
 export default ({likes}) => (
     <div className="meta">
-        <a href="/" className="heart"><MdFavoriteBorder />34</a>
-        <a href="/"><MdModeComment />{likes}</a>
+        <a href="https://api.whatsapp.com/send?phone=593996322016"><AiOutlineWhatsApp />Request Info</a>
+        
+        {/* <a href="/"><MdModeComment />{likes}</a> */}
         <style>{`
         .meta{
             padding: 5px;
@@ -18,13 +19,11 @@ export default ({likes}) => (
         }
         .meta a {
             text-decoration: none;
-            margin-top: 5px;
             float: left;
-            width: 50%;
+            width: 100%;
             text-align: center;
             padding: 9px 0;
-            margin-top: 10px;
-            // color: var(--blue);
+            color: green;            
         }
         .meta svg {
             font-size: 1.3rem;

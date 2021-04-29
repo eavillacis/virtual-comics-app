@@ -10,13 +10,12 @@ export default ({ children, title = 'Virtual Comics' }) => (
         </Head>
         <div className="app">
             <header>
-                <h1><Link href={{ pathname: '/' }}><a>gallery</a></Link></h1>
+                <h1><Link href={{ pathname: '/' }}><a>Catalog</a></Link></h1>
                 <h2>Comics</h2>
             </header>
+            
             { children }
-            <footer>
 
-            </footer>
             <style global jsx>{`
             :root {
                 --green:  #65C5D9; 
@@ -74,6 +73,14 @@ export default ({ children, title = 'Virtual Comics' }) => (
                 margin-top: 200px;
                 text-align: center;
                 padding: 4px 0;
+            }
+            @media only screen and (max-width: 768px) {
+                header h1 a{
+                    font-size:10rem;
+                }
+                h2{
+                    font-size:5rem;
+                }
             }
               
         `}</style>
